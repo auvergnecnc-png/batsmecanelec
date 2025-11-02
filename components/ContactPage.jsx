@@ -8,32 +8,37 @@ export default function ContactPage() {
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null); // 'ok' | 'error' | null
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setSending(true);
-    setStatus(null);
+  const WEB3FORMS_KEY = "TA_CLEF_WEB3FORMS"; // ← colle ta clé ici
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+async function handleSubmit(e) {
+  e.preventDefault();
+  setSending(true);
+  setStatus(null);
 
-    try {
-      const res = await fetch(FORMSPREE_ACTION, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: formData,
-      });
-      if (res.ok) {
-        setStatus('ok');
-        form.reset();
-      } else {
-        setStatus('error');
-      }
-    } catch (err) {
-      setStatus('error');
-    } finally {
-      setSending(false);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+  formData.append("access_key", WEB3FORMS_KEY);
+  // facultatif: forcer la destination
+  formData.append("to", "seb.bats@batsmecanelec.fr");
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const data = await res.json();
+    if (data.success) {
+      setStatus("ok");
+      form.reset();
+    } else {
+      setStatus("error");
     }
+  } catch (err) {
+    setStatus("error");
+  } finally {
+    setSending(false);
   }
+}
 
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden">
