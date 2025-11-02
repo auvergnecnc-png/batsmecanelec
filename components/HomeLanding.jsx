@@ -19,29 +19,29 @@ export default function HomeLanding() {
 
   return (
     <div
-      className="min-h-screen bg-neutral-50 text-neutral-900 font-sans relative overflow-hidden"
+      className="min-h-screen text-neutral-900 font-sans relative overflow-hidden"
       style={{
         backgroundImage: "url('/cn chatgpt.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        opacity: 0.98
       }}
     >
-      <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
+      {/* superposition pour assombrir légèrement le fond */}
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" />
 
       {/* Top contact bar */}
       <div className="hidden md:block bg-neutral-900 text-white text-sm relative z-10">
         <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-end">
           <span>
             ☎️ <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a> • ✉️{' '}
-            <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a>
+            <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
           </span>
         </div>
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200 relative">
+      <header className="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-neutral-200 relative">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -100,6 +100,12 @@ export default function HomeLanding() {
                 Voir nos services
               </a>
             </div>
+            <ul className="mt-6 text-sm text-neutral-600 grid grid-cols-2 gap-y-2">
+              <li>• Intervention rapide</li>
+              <li>• Pièces d’origine</li>
+              <li>• Garantie atelier</li>
+              <li>• Mise en conformité</li>
+            </ul>
           </motion.div>
         </div>
       </section>
@@ -136,7 +142,7 @@ export default function HomeLanding() {
                 Tél. <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a>
               </p>
               <p className="text-sm text-neutral-600">
-                Email <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a>
+                Email <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
               </p>
               <p className="text-sm text-neutral-600">Zone : Centre – France</p>
               <div className="mt-4 aspect-video rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-sm">
