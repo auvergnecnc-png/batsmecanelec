@@ -24,8 +24,8 @@ export default function HomeLanding() {
         <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
           <span>Zone d’intervention : Centre – France • Partenaire SCM Group</span>
           <span>
-            ☎️ <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a> • ✉️{' '}
-            <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a>
+            ☎️ <a className="underline" href="tel:0687812666">06 87 81 26 66</a> • ✉️{' '}
+            <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
           </span>
         </div>
       </div>
@@ -201,10 +201,10 @@ export default function HomeLanding() {
               <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
                 <p className="font-medium">Coordonnées</p>
                 <p className="text-sm text-neutral-600 mt-2">
-                  Tél. <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a>
+                  Tél. <a className="underline" href="tel:0687812666">06 87 81 26 66</a>
                 </p>
                 <p className="text-sm text-neutral-600">
-                  Email <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a>
+                  Email <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
                 </p>
                 <p className="text-sm text-neutral-600">Zone d’intervention : Centre – France</p>
                 <div className="mt-4 aspect-video rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-sm">
