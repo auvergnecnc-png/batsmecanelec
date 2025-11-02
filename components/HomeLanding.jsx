@@ -18,9 +18,20 @@ export default function HomeLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans">
+    <div
+      className="min-h-screen bg-neutral-50 text-neutral-900 font-sans relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/cn chatgpt.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        opacity: 0.98
+      }}
+    >
+      <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
+
       {/* Top contact bar */}
-      <div className="hidden md:block bg-neutral-900 text-white text-sm">
+      <div className="hidden md:block bg-neutral-900 text-white text-sm relative z-10">
         <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-end">
           <span>
             ☎️ <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a> • ✉️{' '}
@@ -30,23 +41,34 @@ export default function HomeLanding() {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-neutral-200">
+      <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-neutral-200 relative">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex items-center gap-4"
+          >
             <img
               src="/logo.png"
               alt="BATS MÉCANELEC"
-              className="w-24 h-24 rounded-xl bg-white object-contain p-1.5 shadow-sm border border-neutral-200"
+              className="w-28 h-28 rounded-xl bg-white object-contain p-1.5 shadow-sm border border-neutral-200"
             />
             <div>
-              <p className="text-3xl md:text-4xl font-semibold italic text-blue-700 leading-none font-[DancingScript]">
+              <motion.p
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="text-4xl md:text-5xl font-semibold italic text-blue-700 leading-none font-[DancingScript]"
+              >
                 Bats Mécanélec
-              </p>
+              </motion.p>
               <p className="text-[11px] md:text-xs text-neutral-500 mt-1">
                 4 Lieu-dit Montluisson<br />63780 SAINT-GEORGES-DE-MONS
               </p>
             </div>
-          </div>
+          </motion.div>
+
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#services" className="hover:text-neutral-600">Services</a>
             <a href="#realisations" className="hover:text-neutral-600">Réalisations</a>
@@ -56,14 +78,17 @@ export default function HomeLanding() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(0,0,0,0.06),transparent_50%),radial-gradient(circle_at_80%_10%,rgba(0,0,0,0.06),transparent_50%)]" />
+      <section className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Vente & réparation <span className="text-neutral-600">de machines à bois</span> — Centre France
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-neutral-900 drop-shadow-md">
+              Vente & réparation <span className="text-neutral-700">de machines à bois</span> — Centre France
             </h1>
-            <p className="mt-4 text-neutral-600 md:text-lg">
+            <p className="mt-4 text-neutral-700 md:text-lg">
               Conseil, fourniture, installation, mise en conformité et maintenance pour ateliers,
               menuisiers et industriels.
             </p>
@@ -71,31 +96,16 @@ export default function HomeLanding() {
               <a href="#contact" className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-sm">
                 Nous contacter
               </a>
-              <a href="#services" className="px-4 py-2 rounded-xl border border-neutral-300 hover:border-neutral-400 text-sm">
+              <a href="#services" className="px-4 py-2 rounded-xl border border-neutral-300 hover:border-neutral-400 text-sm bg-white/70 backdrop-blur">
                 Voir nos services
               </a>
             </div>
-            <ul className="mt-6 text-sm text-neutral-500 grid grid-cols-2 gap-y-2">
-              <li>• Intervention rapide</li>
-              <li>• Pièces d’origine</li>
-              <li>• Garantie atelier</li>
-              <li>• Mise en conformité</li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="hidden md:block"
-          >
-            <img src="/logo.png" alt="Logo Bats Mécanélec" className="w-full max-w-xs mx-auto opacity-90" />
           </motion.div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" className="py-16 md:py-24 bg-white border-t border-neutral-200">
+      <section id="services" className="py-16 md:py-24 bg-white/90 border-t border-neutral-200 relative z-10 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold">Nos services</h2>
           <p className="mt-2 text-neutral-600">Des solutions complètes pour équiper et faire durer votre atelier.</p>
@@ -115,12 +125,12 @@ export default function HomeLanding() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 md:py-24 bg-white border-y border-neutral-200">
+      <section id="contact" className="py-16 md:py-24 bg-white/90 border-y border-neutral-200 relative z-10 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold">Contact</h2>
           <p className="mt-2 text-neutral-600">Dites-nous votre besoin : type de machine, panne, marque, délai souhaité.</p>
           <div className="mt-8 grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
+            <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50/80">
               <p className="font-medium">Coordonnées</p>
               <p className="text-sm text-neutral-600 mt-2">
                 Tél. <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a>
@@ -133,7 +143,7 @@ export default function HomeLanding() {
                 Carte / Google Maps
               </div>
             </div>
-            <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
+            <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50/80">
               <p className="font-medium">Horaires</p>
               <p className="text-sm text-neutral-600 mt-2">Lun–Ven : 8h00 – 18h00</p>
               <p className="text-sm text-neutral-600">Samedi : sur rendez-vous</p>
@@ -143,7 +153,7 @@ export default function HomeLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10">
+      <footer className="py-10 relative z-10 bg-white/90 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6 text-sm">
           <div className="md:col-span-2">
             <p className="font-semibold">BATS MÉCANELEC</p>
@@ -174,7 +184,7 @@ export default function HomeLanding() {
       {/* Bouton mobile Appeler */}
       <a
         href="tel:+33687812666"
-        className="fixed md:hidden bottom-4 right-4 px-4 py-3 rounded-full shadow-lg bg-blue-600 text-white text-sm"
+        className="fixed md:hidden bottom-4 right-4 px-4 py-3 rounded-full shadow-lg bg-blue-600 text-white text-sm z-20"
       >
         Appeler
       </a>
