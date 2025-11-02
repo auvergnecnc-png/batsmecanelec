@@ -29,15 +29,9 @@
   from { transform: scale(1); }
   to   { transform: scale(1.08); }
 }
-:root{
-  --logo-blue:#1e40ff;      /* ajuste si besoin pour coller à ton logo */
-  --logo-yellow:#f2b705;    /* jaune du logo */
-}
-
-/* Couleurs utilitaires */
+:root{ --logo-blue:#1e40ff; --logo-yellow:#f2b705; }
 .text-logo-blue{ color:var(--logo-blue); }
-.bg-logo-yellow-65{ background-color: rgba(242,183,5,.65); } /* 65% */
+.bg-logo-yellow-65{ background-color: rgba(242,183,5,.65); }
 .border-logo-yellow{ border-color: rgba(242,183,5,.85); }
-
-/* ombres pour lisibilité si besoin */
-.text-soft-shadow{ text-shadow: 1px 1px 3px rgba(0,0,0,.6); }
+.bg-parallax{ position:absolute; inset:0; background-size:cover; background-position:center; will-change:transform; animation:slow-zoom 22s ease-in-out infinite alternate; }
+@keyframes slow-zoom{ from{transform:scale(1)} to{transform:scale(1.08)} }
