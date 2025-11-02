@@ -64,13 +64,13 @@ export default function HomeLanding() {
           >
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
               <span className="text-logo-blue">Vente & réparation</span><br/>
-              <span>de machines à bois —</span><br/>
-              <span>Centre France</span>
+              <span className="text-logo-blue">de machines à bois —</span><br/>
+              
             </h1>
 
             <p className="mt-3 md:text-lg">
               Conseil, fourniture, installation, mise en conformité et maintenance pour ateliers,
-              menuisiers et industriels.
+              menuisiers,agenceurs et industriels.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
