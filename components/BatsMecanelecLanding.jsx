@@ -1,3 +1,4 @@
+
 'use client';
 import { motion } from "framer-motion";
 
@@ -30,6 +31,13 @@ export default function BatsMecanelecLanding() {
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
+      {/* Top contact bar */}
+      <div className="hidden md:block bg-neutral-900 text-white text-sm">
+        <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+          <span>Zone d’intervention : Centre – France • Partenaire SCM Group</span>
+          <span>☎️ <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a> • ✉️ <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a></span>
+        </div>
+      </div>
       {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-neutral-200">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -45,7 +53,7 @@ export default function BatsMecanelecLanding() {
             <a href="#realisations" className="hover:text-neutral-600">Réalisations</a>
             <a href="#contact" className="hover:text-neutral-600">Contact</a>
           </nav>
-          <a href="#contact" className="ml-4 text-sm px-3.5 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700">Devis gratuit</a>
+          <a href="#devis" className="ml-4 text-sm px-3.5 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700">Devis gratuit</a>
         </div>
       </header>
 
@@ -55,10 +63,10 @@ export default function BatsMecanelecLanding() {
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{duration:0.6}}>
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Vente & réparations <span className="text-neutral-600">de machines à bois</span>
+              Vente & réparation <span className="text-neutral-600">de machines à bois</span> — Centre France
             </h1>
             <p className="mt-4 text-neutral-600 md:text-lg">
-              BATS MÉCANELEC accompagne ateliers, menuisiers et industriels : conseil, fourniture, installation et maintenance de vos équipements bois.
+              Partenaire SCM Group : conseil, fourniture, installation, mise en conformité et maintenance pour ateliers, menuisiers et industriels.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#contact" className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-sm">Demander un devis</a>
@@ -72,14 +80,23 @@ export default function BatsMecanelecLanding() {
             </ul>
           </motion.div>
           <motion.div initial={{opacity:0,scale:0.98}} animate={{opacity:1,scale:1}} transition={{duration:0.6, delay:0.1}}>
-            <div className="aspect-[4/3] rounded-2xl bg-white shadow-xl border border-neutral-200 p-4 grid grid-rows-2 gap-4">
-              <div className="rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-sm">(Photo atelier / scie à format)</div>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-xs">Toupie</div>
-                <div className="rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-xs">Raboteuse</div>
-                <div className="rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-xs">Aspirateur</div>
+            <form id="devis" action="https://formspree.io/f/xbjwqpdl" method="POST" className="rounded-2xl bg-white shadow-xl border border-neutral-200 p-5 md:p-6">
+              <p className="font-semibold text-lg">Demande de devis rapide</p>
+              <div className="mt-3 grid gap-3">
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="name" placeholder="Nom / Entreprise" required/>
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="phone" placeholder="Téléphone"/>
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="email" placeholder="Email" type="email" required/>
+                <select name="service" className="px-3 py-2 rounded-lg border border-neutral-300 bg-white">
+                  <option>Vente de machine</option>
+                  <option>Réparation / Dépannage</option>
+                  <option>Contrat de maintenance</option>
+                  <option>Mise en conformité</option>
+                </select>
+                <textarea className="px-3 py-2 rounded-lg border border-neutral-300 bg-white min-h-[110px]" name="message" placeholder="Modèle / marque / panne / délai" required></textarea>
+                <button type="submit" className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-sm">Envoyer</button>
+                <p className="text-xs text-neutral-500">Réponse sous 24h ouvrées</p>
               </div>
-            </div>
+            </form>
           </motion.div>
         </div>
       </section>
@@ -166,20 +183,20 @@ export default function BatsMecanelecLanding() {
           <h2 className="text-2xl md:text-3xl font-bold">Contact</h2>
           <p className="mt-2 text-neutral-600">Dites-nous votre besoin : type de machine, panne, marque, délai souhaité.</p>
           <div className="mt-8 grid md:grid-cols-2 gap-8">
-            <form className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50" action="https://formspree.io/f/xbjwqpdl" method="POST">
+            <form className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
               <div className="grid gap-3">
-                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="name" placeholder="Nom / Entreprise" required/>
-                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="email" placeholder="Email" type="email" required/>
-                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="phone" placeholder="Téléphone"/>
-                <textarea className="px-3 py-2 rounded-lg border border-neutral-300 bg-white min-h-[120px]" name="message" placeholder="Votre message (panne, modèle, service souhaité)" required></textarea>
-                <button type="submit" className="mt-2 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-sm">Envoyer la demande</button>
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" placeholder="Nom / Entreprise"/>
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" placeholder="Email" type="email"/>
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" placeholder="Téléphone"/>
+                <textarea className="px-3 py-2 rounded-lg border border-neutral-300 bg-white min-h-[120px]" placeholder="Votre message (panne, modèle, service souhaité)"></textarea>
+                <button type="button" className="mt-2 px-4 py-2 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 text-sm">Envoyer la demande</button>
               </div>
               <p className="text-xs text-neutral-500 mt-3">En cliquant, vous acceptez notre politique de confidentialité.</p>
             </form>
             <div className="grid gap-4 content-start">
               <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
                 <p className="font-medium">Coordonnées</p>
-                <p className="text-sm text-neutral-600 mt-2">Tél. <a className="underline" href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a></p>
+                <p className="text-sm text-neutral-600 mt-2">Tél. <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a></p>
                 <p className="text-sm text-neutral-600">Email <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a></p>
                 <p className="text-sm text-neutral-600">Zone d’intervention : Centre – France</p>
                 <div className="mt-4 aspect-video rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-sm">Carte / Google Maps</div>
@@ -220,6 +237,9 @@ export default function BatsMecanelecLanding() {
         </div>
         <div className="max-w-6xl mx-auto px-4 mt-6 text-xs text-neutral-500">© {new Date().getFullYear()} BATS MÉCANELEC. Tous droits réservés.</div>
       </footer>
+
+      {/* Floating call button */}
+      <a href="tel:+33687812666" className="fixed md:hidden bottom-4 right-4 px-4 py-3 rounded-full shadow-lg bg-blue-600 text-white text-sm">Appeler</a>
     </div>
   );
 }

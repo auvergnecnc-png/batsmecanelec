@@ -1,3 +1,4 @@
+
 'use client';
 import BatsMecanelecLanding from "../components/BatsMecanelecLanding";
 export default function Page() {
