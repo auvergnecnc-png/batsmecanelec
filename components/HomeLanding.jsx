@@ -69,8 +69,8 @@ export default function HomeLanding() {
             </h1>
 
             <p className="mt-3 md:text-lg">
-              Conseil, fourniture, installation, mise en conformité et maintenance pour ateliers,
-              menuisiers,agenceurs et industriels.
+              Conseil, fourniture, installation, mise en conformité et maintenance pour ateliers
+              menuiseries,agenceurs et industriels.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
