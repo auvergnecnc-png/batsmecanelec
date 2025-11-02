@@ -22,10 +22,10 @@ export default function HomeLanding() {
       {/* Top contact bar */}
       <div className="hidden md:block bg-neutral-900 text-white text-sm">
         <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
-          <span>Zone d’intervention : Centre – France </span>
+          <span>Zone d’intervention : Centre – France • Partenaire SCM Group</span>
           <span>
-            ☎️ <a className="underline" href="tel:0687812666">06 87 81 26 66</a> • ✉️{' '}
-            <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
+            ☎️ <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a> • ✉️{' '}
+            <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a>
           </span>
         </div>
       </div>
@@ -85,13 +85,47 @@ export default function HomeLanding() {
             </ul>
           </motion.div>
 
-         
+          {/* Devis rapide */}
+          <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <form
+              id="devis"
+              action="https://formspree.io/f/xbjwqpdl"
+              method="POST"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl bg-white shadow-xl border border-neutral-200 p-5 md:p-6"
+            >
+              <p className="font-semibold text-lg">Demande de devis rapide</p>
+              <div className="mt-3 grid gap-3">
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="name" placeholder="Nom / Entreprise" required />
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="phone" placeholder="Téléphone" />
+                <input className="px-3 py-2 rounded-lg border border-neutral-300 bg-white" name="email" placeholder="Email" type="email" required />
+                <select name="service" className="px-3 py-2 rounded-lg border border-neutral-300 bg-white">
+                  <option>Vente de machine</option>
+                  <option>Réparation / Dépannage</option>
+                  <option>Contrat de maintenance</option>
+                  <option>Mise en conformité</option>
+                </select>
+                <textarea
+                  className="px-3 py-2 rounded-lg border border-neutral-300 bg-white min-h-[110px]"
+                  name="message"
+                  placeholder="Modèle / marque / panne / délai"
+                  required
+                ></textarea>
+                <button type="submit" className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 text-sm">Envoyer</button>
+                <p className="text-xs text-neutral-500">Réponse sous 24h ouvrées</p>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Marques */}
       <section className="py-8 border-y border-neutral-200 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs uppercase tracking-wider text-neutral-500 mb-4">Nous travaillons avec</p>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-center">
-            <div className="px-3 py-2 rounded-lg border border-neutral-200 bg-neutral-50 text-center text-sm text-neutral-600">.</div>
+            <div className="px-3 py-2 rounded-lg border border-neutral-200 bg-neutral-50 text-center text-sm text-neutral-600">SCM Group</div>
           </div>
         </div>
       </section>
@@ -167,10 +201,10 @@ export default function HomeLanding() {
               <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
                 <p className="font-medium">Coordonnées</p>
                 <p className="text-sm text-neutral-600 mt-2">
-                  Tél. <a className="underline" href="tel:0687812666">06 87 81 26 66</a>
+                  Tél. <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a>
                 </p>
                 <p className="text-sm text-neutral-600">
-                  Email <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
+                  Email <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a>
                 </p>
                 <p className="text-sm text-neutral-600">Zone d’intervention : Centre – France</p>
                 <div className="mt-4 aspect-video rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-sm">
