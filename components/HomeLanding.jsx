@@ -22,7 +22,7 @@ export default function HomeLanding() {
       {/* Top contact bar */}
       <div className="hidden md:block bg-neutral-900 text-white text-sm">
         <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
-          <span>Zone d’intervention : Centre – France • Partenaire SCM Group</span>
+          <span>Zone d’intervention : Centre – France </span>
           <span>
             ☎️ <a className="underline" href="tel:0687812666">06 87 81 26 66</a> • ✉️{' '}
             <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
@@ -91,7 +91,7 @@ export default function HomeLanding() {
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-xs uppercase tracking-wider text-neutral-500 mb-4">Nous travaillons avec</p>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4 items-center">
-            <div className="px-3 py-2 rounded-lg border border-neutral-200 bg-neutral-50 text-center text-sm text-neutral-600">SCM Group</div>
+            <div className="px-3 py-2 rounded-lg border border-neutral-200 bg-neutral-50 text-center text-sm text-neutral-600">.</div>
           </div>
         </div>
       </section>
