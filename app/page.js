@@ -1,2 +1,5 @@
-import BatsMecanelecLanding from '../components/BatsMecanelecLanding';
-export default function Page(){return <BatsMecanelecLanding/>}
+import HomeLanding from '../components/HomeLanding';
+
+export default function Page() {
+  return <HomeLanding />;
+}
