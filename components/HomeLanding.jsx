@@ -37,14 +37,12 @@ export default function HomeLanding() {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
             {/* Logo plus gros, SANS fond */}
-            <img src="/logo.png" alt="BATS MÉCANELEC" className="w-36 h-36 object-contain" />
+            <img src="/logo.png" alt="BATS MÉCANELEC" className="w-60 h-60 object-contain" />
             <div>
               <p className="text-5xl md:text-6xl font-semibold italic text-logo-blue font-[DancingScript] leading-none">
                 Bats Mécanélec
               </p>
-              <p className="text-[11px] md:text-xs text-gray-100 mt-1">
-                4 Lieu-dit Montluisson<br/>63780 SAINT-GEORGES-DE-MONS
-              </p>
+             
             </div>
           </div>
 
