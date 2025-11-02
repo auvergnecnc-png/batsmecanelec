@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 const MAPS_URL = 'https://maps.app.goo.gl/CFLjtYqCeJoj6Ksz9';
-const FORMSPREE_ACTION = 'https://formspree.io/f/xbjwqpdl'; // ton endpoint
+const FORMSPREE_ACTION = 'https://formspree.io/f/xbjwqpdl';
 
 export default function ContactPage() {
   const [sending, setSending] = useState(false);
@@ -19,8 +19,8 @@ export default function ContactPage() {
     try {
       const res = await fetch(FORMSPREE_ACTION, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: formData
+        headers: { Accept: 'application/json' },
+        body: formData,
       });
       if (res.ok) {
         setStatus('ok');
@@ -37,12 +37,12 @@ export default function ContactPage() {
 
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden">
-      {/* fond (même effet que l'accueil) */}
+      {/* fond identique accueil */}
       <div className="bg-parallax" style={{ backgroundImage: "url('/cn chatgpt.png')" }} aria-hidden />
 
-      {/* Top bar */}
+      {/* top bar */}
       <div className="relative z-10 hidden md:block text-white text-sm">
-        <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-end drop-shadow-[0_1px_4px_rgba(0,0,0,.8)]">
+        <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-end">
           <span>
             ☎️ <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a> • ✉️{' '}
             <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
@@ -50,7 +50,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Header simple */}
+      {/* header */}
       <header className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -72,7 +72,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      {/* Bloc contact */}
+      {/* bloc contact */}
       <section className="relative z-10 py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="inline-block bg-logo-yellow-65 border-2 border-black rounded-[28px] px-4 py-2 text-3xl font-bold text-neutral-900">
@@ -83,37 +83,51 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8 grid md:grid-cols-2 gap-8 text-neutral-900">
-            {/* Coordonnées + lien Maps */}
+            {/* coordonnées + image maps cliquable */}
             <div className="rounded-2xl p-6 border-2 border-black bg-logo-yellow-65">
               <p className="font-medium text-black">Coordonnées</p>
               <p className="text-sm mt-2 text-black">
                 Tél. <a className="underline text-logo-blue" href="tel:+33687812666">+33 6 87 81 26 66</a>
               </p>
               <p className="text-sm text-black">
-                Email <a className="underline text-logo-blue" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>
+                Email{' '}
+                <a className="underline text-logo-blue" href="mailto:seb.bats@batsmecanelec.fr">
+                  seb.bats@batsmecanelec.fr
+                </a>
               </p>
-              <p className="text-sm text-black">Adresse : 4 Lieu-dit Montluisson, 63780 SAINT-GEORGES-DE-MONS</p>
+              <p className="text-sm text-black">
+                Adresse : 4 Lieu-dit Montluisson, 63780 SAINT-GEORGES-DE-MONS
+              </p>
 
-              <div className="mt-4 grid gap-2">
-                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="underline text-logo-blue">
-                  Ouvrir dans Google Maps
-                </a>
-                <a
-                  href={MAPS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full text-center px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm"
-                >
-                  Itinéraire
-                </a>
-              </div>
+              {/* Image de carte cliquable */}
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 block rounded-xl overflow-hidden border-2 border-black"
+                title="Ouvrir dans Google Maps"
+              >
+                {/* Mets un aperçu statique dans /public/maps-preview.jpg */}
+                <img
+                  src="/maps-preview.jpg"
+                  alt="Localisation BATS MÉCANELEC sur Google Maps"
+                  className="w-full h-56 object-cover"
+                />
+              </a>
+
+              {/* Bouton itinéraire (conserve si tu veux) */}
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block w-full text-center px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm"
+              >
+                Itinéraire Google Maps
+              </a>
             </div>
 
-            {/* Formulaire connecté */}
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl p-6 border-2 border-black bg-logo-yellow-65"
-            >
+            {/* formulaire connecté */}
+            <form onSubmit={handleSubmit} className="rounded-2xl p-6 border-2 border-black bg-logo-yellow-65">
               <p className="font-medium text-black">Demande</p>
               <div className="mt-3 grid gap-3">
                 <input className="px-3 py-2 rounded-lg bg-white text-black placeholder-neutral-500" name="name" placeholder="Nom / Entreprise" required />
@@ -125,7 +139,7 @@ export default function ContactPage() {
                   <option>Contrat de maintenance</option>
                   <option>Mise en conformité</option>
                 </select>
-                <textarea className="px-3 py-2 rounded-lg bg-white text-black min-h-[120px]" name="message" placeholder="Votre message (panne, modèle, délai)"></textarea>
+                <textarea className="px-3 py-2 rounded-lg bg:white text-black min-h-[120px]" name="message" placeholder="Votre message (panne, modèle, délai)"></textarea>
 
                 <button
                   type="submit"
@@ -140,9 +154,13 @@ export default function ContactPage() {
                     Merci, votre demande a été envoyée. Nous revenons vers vous rapidement.
                   </p>
                 )}
+
                 {status === 'error' && (
                   <p className="text-sm text-red-700 bg-white/80 rounded-md px-3 py-2">
-                    Désolé, l’envoi a échoué. Réessayez ou écrivez à <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a>.
+                    Désolé, l’envoi a échoué. Réessayez ou écrivez à{' '}
+                    <a className="underline text-logo-blue" href="mailto:seb.bats@batsmecanelec.fr">
+                      seb.bats@batsmecanelec.fr
+                    </a>.
                   </p>
                 )}
               </div>
