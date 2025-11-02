@@ -1,6 +1,3 @@
-
-import HomeLanding from '../../components/HomeLanding';
+import ContactPage from '../../components/ContactPage';
 export const metadata = { title: 'Contact – BATS Mécanélec' };
-export default function Page() {
-  return <HomeLanding />; // même habillage
-}
+export default function Page() { return <ContactPage />; }
