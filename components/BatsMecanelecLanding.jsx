@@ -196,8 +196,8 @@ export default function BatsMecanelecLanding() {
             <div className="grid gap-4 content-start">
               <div className="rounded-2xl border border-neutral-200 p-6 bg-neutral-50">
                 <p className="font-medium">Coordonnées</p>
-                <p className="text-sm text-neutral-600 mt-2">Tél. <a className="underline" href="tel:+33687812666">+33 6 87 81 26 66</a></p>
-                <p className="text-sm text-neutral-600">Email <a className="underline" href="mailto:contact@bats-mecanelec.fr">contact@bats-mecanelec.fr</a></p>
+                <p className="text-sm text-neutral-600 mt-2">Tél. <a className="underline" href="tel:0687812666">06 87 81 26 66</a></p>
+                <p className="text-sm text-neutral-600">Email <a className="underline" href="mailto:seb.bats@batsmecanelec.fr">seb.bats@batsmecanelec.fr</a></p>
                 <p className="text-sm text-neutral-600">Zone d’intervention : Centre – France</p>
                 <div className="mt-4 aspect-video rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-sm">Carte / Google Maps</div>
               </div>
@@ -239,7 +239,7 @@ export default function BatsMecanelecLanding() {
       </footer>
 
       {/* Floating call button */}
-      <a href="tel:+33687812666" className="fixed md:hidden bottom-4 right-4 px-4 py-3 rounded-full shadow-lg bg-blue-600 text-white text-sm">Appeler</a>
+      <a href="tel:0687812666" className="fixed md:hidden bottom-4 right-4 px-4 py-3 rounded-full shadow-lg bg-blue-600 text-white text-sm">Appeler</a>
     </div>
   );
 }
