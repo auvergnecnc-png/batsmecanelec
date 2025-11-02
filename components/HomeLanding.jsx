@@ -95,9 +95,15 @@ export default function HomeLanding() {
 
       {/* Services */}
       <section id="services" className="relative z-10 py-20">
-        <div className="max-w-6xl mx-auto px-4 text-white">
-          <h2 className="text-3xl font-bold text-soft-shadow-2 bg-logo-yellow-50 inline-block px-2 rounded-md">Nos services</h2>
-          <p className="mt-2 text-gray-200">Des solutions complètes pour équiper et faire durer votre atelier.</p>
+        <div className="max-w-6xl mx-auto px-4 text-neutral-900">
+  <h2 className="inline-block bg-logo-yellow-65 px-3 py-2 rounded-2xl border-2 border-logo-yellow text-2xl md:text-3xl font-bold">
+    Nos services
+  </h2>
+
+  <p className="mt-3 inline-block bg-logo-yellow-65 px-3 py-2 rounded-2xl border border-logo-yellow text-[15px]">
+    Des solutions complètes pour équiper et faire durer votre atelier.
+  </p>
+
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="rounded-2xl bg-white/10 p-5 border border-white/20 shadow-lg hover:bg-white/20 transition">
