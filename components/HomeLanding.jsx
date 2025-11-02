@@ -94,7 +94,7 @@ export default function HomeLanding() {
       </section>
 
       {/* Services */}
-      <section id="services" className="relative z-10 py-20 bg-black/45 backdrop-blur-sm border-t border-white/10">
+      <section id="services" className="relative z-10 py-20">
         <div className="max-w-6xl mx-auto px-4 text-white">
           <h2 className="text-3xl font-bold text-soft-shadow-2 bg-logo-yellow-50 inline-block px-2 rounded-md">Nos services</h2>
           <p className="mt-2 text-gray-200">Des solutions complètes pour équiper et faire durer votre atelier.</p>
