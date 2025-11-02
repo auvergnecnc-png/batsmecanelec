@@ -41,7 +41,7 @@ export default function HomeLanding() {
             <img
               src="/logo.png"
               alt="BATS MÉCANELEC"
-              className="w-32 h-32 object-contain" /* pas de bg ni bordure */
+              className="w-48 h-48 object-contain" /* pas de bg ni bordure */
             />
             <div>
               <motion.p
