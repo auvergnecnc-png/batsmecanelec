@@ -1,3 +1,5 @@
+import { Dancing_Script } from 'next/font/google';
+const dancing = Dancing_Script({ subsets: ['latin'], weight: ['600'], variable: '--font-dancing' });
 
 import "./../styles/globals.css";
 export const metadata = {
