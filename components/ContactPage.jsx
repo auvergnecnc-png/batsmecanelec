@@ -8,7 +8,7 @@ export default function ContactPage() {
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null); // 'ok' | 'error' | null
 
-  const WEB3FORMS_KEY = "3f20be25-d207-4eba-8ae7-92669c68d170"; // ← colle ta clé ici
+  const WEB3FORMS_KEY = "3f20be25-d207-4eba-8ae7-92669c68d170"; // ← ta clé ici
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -17,29 +17,35 @@ async function handleSubmit(e) {
 
   const form = e.currentTarget;
   const formData = new FormData(form);
+
+  // Champs obligatoires / utiles
   formData.append("access_key", WEB3FORMS_KEY);
-  // facultatif: forcer la destination
-  formData.append("to", "seb.bats@batsmecanelec.fr");
+  formData.append("to", "seb.bats@batsmecanelec.fr");          // destinataire
+  formData.append("subject", "Nouveau message depuis batsmecanelec.fr");
+  formData.append("from_name", "Site BATS Mécanélec");           // nom expéditeur affiché
+  formData.append("replyto", formData.get("email") || "");       // Reply-To = email du client
+  formData.append("botcheck", "");                               // honeypot (laisse vide)
 
   try {
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
     const data = await res.json();
+    console.log("Web3Forms response:", data);
+
     if (data.success) {
       setStatus("ok");
       form.reset();
     } else {
+      // Affiche l’erreur côté UI pour diagnostiquer
       setStatus("error");
+      alert("Erreur Web3Forms: " + (data.message || "inconnue"));
     }
   } catch (err) {
+    console.error(err);
     setStatus("error");
   } finally {
     setSending(false);
   }
 }
-
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden">
       {/* fond identique accueil */}
