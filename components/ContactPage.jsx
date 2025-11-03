@@ -8,7 +8,7 @@ export default function ContactPage() {
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null); // 'ok' | 'error' | null
 
-  const WEB3FORMS_KEY = 3f20be25-d207-4eba-8ae7-92669c68d170; // ← ta clé ici
+  const WEB3FORMS_KEY = "3f20be25-d207-4eba-8ae7-92669c68d170"; // ← ta clé ici
 
 async function handleSubmit(e) {
   e.preventDefault();
